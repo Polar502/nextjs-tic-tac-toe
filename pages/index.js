@@ -7,12 +7,23 @@ import Tablero from "./tablero";
 
 const Totito = () => {
   return (
-    <div className="flex flex-col bg-sky-600 items-center justify-center h-screen">
-      <div className="">
-        {/* No necesario (quitar) */}
-        <h1 className="h1-text">Your turn Player X || O </h1>
+    <div className="flex flex-col bg-neutral-900 items-center justify-center h-screen">
+      <div className="grow-1">
+        <div className="div-score">
+          <div className="div-player">
+            <div className="">Player X</div>
+            <div className="">-</div>
+          </div>
+          <div className="div-player">
+            <div className="">Player O</div>
+            <div className="">-</div>
+          </div>
+        </div>
+        {/* Turn label */}
+        <h1 className="h1-text">Your turn X || O </h1>
         {/* invocar funcion Tablero */}
         <Tablero />
+        <div className="restart">Restart game</div>
       </div>
     </div>
   );
