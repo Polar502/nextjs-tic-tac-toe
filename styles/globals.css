@@ -2,42 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-.h1-text{
-    @apply text-xl font-semibold text-white text-center p-2;
+/* Estilo del grid del tablero con espaciado responsivo */
+.board {
+  @apply grid grid-cols-3 gap-2 md:gap-3 bg-cyan-900;
 }
 
-.div-score{
-    @apply flex flex-row items-center justify-between gap-4;
+/* Estilo del cuadrado responsivo en las siguientes dimensiones: sm, md y xl */
+.square {
+  @apply flex items-center justify-center font-bold text-7xl rounded-sm bg-cyan-600 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-24 w-24 md:h-28 md:w-28 xl:h-32 xl:w-32;
 }
 
-.div-player{
-    @apply flex flex-row items-center justify-between px-2 sm:px-4 bg-transparent rounded-md border border-b-2 border-white hover:border-b-cyan-600 w-full h-10 gap-4  items-center justify-center font-semibold text-white;
+/* Estilo del valor = x */
+.x {
+  @apply text-rose-600;
 }
 
-.board{
-    @apply grow;
+/* Estilo del valor = o */
+.o {
+  @apply text-lime-600;
 }
 
-.square{
-    @apply flex items-center justify-center bg-cyan-600 hover:cursor-pointer hover:bg-opacity-90 duration-300 font-semibold text-white h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 xl:h-36 xl:w-36;
+.sacudirSi {
+  @apply animate-shake;
 }
 
-.top{
-    @apply border-t-4 border-t-white;
+.sacudirNo {
+  @apply animate-none;
 }
 
-.bottom{
-    @apply border-b-4 border-b-white;
+
+/* .restart {
+  @apply text-xl text-center font-semibold text-cyan-600 hover:text-white hover:cursor-pointer p-2;
+} */
+
+/* .h1-text {
+  @apply text-xl font-semibold text-white text-center p-2;
 }
 
-.right{
-    @apply border-r-4 border-r-white;
+.div-score {
+  @apply flex flex-row items-center justify-between gap-4;
 }
 
-.left{
-    @apply border-l-4 border-l-white;
-}
+.div-player {
+  @apply flex flex-row items-center justify-between px-2 sm:px-4 bg-transparent rounded-md border border-b-2 border-white hover:border-b-cyan-600 w-full h-10 gap-4  items-center justify-center font-semibold text-white;
+} */
 
-.restart{
-    @apply text-xl text-center font-semibold text-cyan-600 hover:text-white hover:cursor-pointer p-2;
-}
+/* .square-disable {
+    @apply flex items-center justify-center animate-shake font-bold text-white text-7xl rounded-sm bg-cyan-600 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-24 w-24 md:h-28 md:w-28 xl:h-32 xl:w-32;
+  }
+   */
