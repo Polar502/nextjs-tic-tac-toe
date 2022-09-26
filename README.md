@@ -1,4 +1,12 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tic Tac Toe
+
+This is a Tic Tac Toe game made with Node.js and Next.js created by [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
+
+## View Tic Tac Toe Demo
+
+Link to see the demo → [View Demo](https://nextjs-tic-tac-toe-polar502.herokuapp.com/)
+(Our first APP - part 2)
+
 
 ## Getting Started
 
