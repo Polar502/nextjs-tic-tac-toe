@@ -1,9 +1,7 @@
-import MyTicTacToe from "./_app";
+import MyTicTacToe from './_app'
 
 const Totito = () => {
-  return (
-        <MyTicTacToe/>
-  );
-};
+  return <MyTicTacToe />
+}
 
-export default Totito; 
+export default Totito

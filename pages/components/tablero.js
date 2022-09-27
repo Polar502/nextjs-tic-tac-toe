@@ -1,29 +1,29 @@
-import { useState } from "react";
-import Cuadro from "./cuadro";
+import { useState } from 'react'
+import Cuadro from './cuadro'
 
 const Tablero = () => {
-  const [cuadros, setCuadros] = useState(Array(9).fill(""));
-  const [turno, setTurno] = useState("X");
-  const [sacudir, setSacudir] = useState(false);
+  const [cuadros, setCuadros] = useState(Array(9).fill(''))
+  const [turno, setTurno] = useState('X')
+  const [sacudir, setSacudir] = useState(false)
 
   const pintaFigura = (indexItem) => {
-    const misCuadritos = cuadros.slice();
-    misCuadritos.splice(indexItem, 1, turno);
+    const misCuadritos = cuadros.slice()
+    misCuadritos.splice(indexItem, 1, turno)
 
     //Si el cuadro esta vacio permitir llenar
-    if (cuadros[indexItem] === "") {
-      setCuadros(misCuadritos);
-      if (turno === "X") {
-        setTurno("O");
+    if (cuadros[indexItem] === '') {
+      setCuadros(misCuadritos)
+      if (turno === 'X') {
+        setTurno('O')
       } else {
-        setTurno("X");
+        setTurno('X')
       }
-      setSacudir(false);
-    } //De lo contario sacudir 
+      setSacudir(false)
+    } //De lo contario sacudir
     else {
-      setSacudir(true);
+      setSacudir(!sacudir)
     }
-  };
+  }
 
   return (
     <div className="board">
@@ -40,10 +40,10 @@ const Tablero = () => {
             //accion al hacer click en el cuadro
             alHacerClick={() => pintaFigura(indexItem)}
           />
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
 
-export default Tablero;
+export default Tablero
