@@ -1,12 +1,10 @@
-const Cuadro = ({ valor, animacion, alHacerClick }) => {
+const Cuadro = ({ valor, alHacerClick }) => {
   //Estilo del valor del cuadro
   const estilo = valor === 'X' ? 'x' : 'o'
 
-  //Si animacion es True entonces sacudir de lo contario no sacudir
-  const animar = animacion === true ? 'sacudirSi' : 'sacudirNo'
   return (
     <button
-      className={`square ${estilo} ${animar}`}
+      className={`square ${estilo}`}
       onClick={() => alHacerClick()}
     >
       {valor}

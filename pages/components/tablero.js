@@ -4,7 +4,7 @@ import Cuadro from './cuadro'
 const Tablero = () => {
   const [cuadros, setCuadros] = useState(Array(9).fill(''))
   const [turno, setTurno] = useState('X')
-  const [sacudir, setSacudir] = useState(false)
+  const [animacion, setAnimacion] = useState(false)
 
   const pintaFigura = (indexItem) => {
     const misCuadritos = cuadros.slice()
@@ -18,15 +18,19 @@ const Tablero = () => {
       } else {
         setTurno('X')
       }
-      setSacudir(false)
+      setAnimacion(false)
     } //De lo contario sacudir
     else {
-      setSacudir(!sacudir)
+      setAnimacion(!animacion)
     }
   }
 
+  //Si animacion es True entonces sacudir de lo contario no sacudir
+  const animar = animacion === true ? 'sacudirSi' : 'sacudirNo'
+
   return (
-    <div className="board">
+    //Animacion sacudir si esta lleno
+    <div className={`board ${animar}`}>
       {/* Llenado del tablero */}
       {cuadros.map((item, indexItem) => {
         return (
@@ -35,8 +39,6 @@ const Tablero = () => {
             key={indexItem}
             // valor del item del cuadro
             valor={item}
-            //Animacion sacudir si esta lleno
-            animacion={sacudir}
             //accion al hacer click en el cuadro
             alHacerClick={() => pintaFigura(indexItem)}
           />
