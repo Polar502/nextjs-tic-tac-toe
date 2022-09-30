@@ -7,6 +7,8 @@ This is a Tic Tac Toe game made with Node.js and Next.js created by [`create-nex
 Link to see the demo → [View Demo](https://nextjs-tic-tac-toe-polar502.herokuapp.com/)
 (Our first APP - Part 3)
 
+![alt text](https://git.via-asesores.com/jmaritar/totito/src/branch/master/public/demo.png)
+
 
 ## Getting Started
 
