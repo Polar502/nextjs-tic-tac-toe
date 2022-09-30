@@ -1,3 +1,6 @@
+/* Font Family from Google Fonts (Fredoka One) */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,45 +11,57 @@
 }
 
 /* Estilo del cuadrado responsivo en las siguientes dimensiones: sm, md y xl */
+/* cuadro normal sin ninguna animacion */
 .square {
-  @apply flex items-center justify-center animate-none font-bold text-7xl shadow-2xl rounded-sm bg-cyan-600 active:bg-cyan-400 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-24 w-24 md:h-28 md:w-28 xl:h-32 xl:w-32;
+  @apply flex items-center justify-center animate-none shadow-2xl rounded-sm bg-cyan-600 active:bg-cyan-400 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-24 w-24 md:h-28 md:w-28 xl:h-32 xl:w-32;
 }
 
-/* Estilo del valor = x */
+/* cuadro ganador con una animacion pulse */
+.squareWinner {
+  @apply flex items-center justify-center animate-pulse shadow-2xl rounded-sm bg-cyan-500 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-24 w-24 md:h-28 md:w-28 xl:h-32 xl:w-32;
+}
+
+/* estilo del valor X */
 .x {
-  @apply text-rose-600;
+  @apply text-rose-600 font-fredoka text-8xl select-none;
 }
 
-/* Estilo del valor = o */
+/* estilo del valor O */
 .o {
-  @apply text-lime-600;
+  @apply text-lime-600 font-fredoka text-8xl select-none;
 }
 
+/* estilo del valor concatenado entre X y Ganador (animacion spin)*/
+.x.ganadores {
+  @apply animate-spin;
+}
+
+/* estilo del valor concatenado entre O y Ganador (animacion flip modificado)*/
+.o.ganadores {
+  @apply animate-flip;
+}
+/* animacion shake modificado en Tailwind.config */
 .sacudirSi {
   @apply animate-shake;
 }
 
+/* ninguna animacion (es innecesaria) */
 .sacudirNo {
   @apply animate-none;
 }
 
-/* .restart {
-  @apply text-xl text-center font-semibold text-cyan-600 hover:text-white hover:cursor-pointer p-2;
-} */
-
-/* .h1-text {
-  @apply text-xl font-semibold text-white text-center p-2;
+.restart {
+  @apply text-2xl w-full select-none text-center font-semibold text-cyan-600 hover:text-white hover:cursor-pointer p-4;
 }
 
+.h1-text {
+  @apply text-2xl w-full text-center  font-semibold text-white p-4;
+}
+/* 
 .div-score {
   @apply flex flex-row items-center justify-between gap-4;
 }
 
 .div-player {
-  @apply flex flex-row items-center justify-between px-2 sm:px-4 bg-transparent rounded-md border border-b-2 border-white hover:border-b-cyan-600 w-full h-10 gap-4  items-center justify-center font-semibold text-white;
+  @apply flex flex-row items-center justify-between px-2 sm:px-4 bg-transparent rounded-md border border-b-2 border-white hover:border-b-cyan-600 w-full h-10 gap-4  font-semibold text-white;
 } */
-
-/* .square-disable {
-    @apply flex items-center justify-center animate-shake font-bold text-white text-7xl rounded-sm bg-cyan-600 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-24 w-24 md:h-28 md:w-28 xl:h-32 xl:w-32;
-  }
-   */
