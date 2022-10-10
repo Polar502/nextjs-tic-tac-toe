@@ -1,11 +1,3 @@
-/**
- * Renderiza el tablero con los componentes 'cuadro'
- * @param valor {string}
- * @param alHacerClick {function}
- * @param ganadores {boolean}
- * @return Cuadro {div}
- */
-
 const Cuadro = ({ valor, alHacerClick, ganadores }) => {
   //Estilo del cuadro (Cuadrado Ganador o Cuadrado por defecto)
   const estiloCuadro = ganadores === true ? 'squareWinner' : 'square'
@@ -15,11 +7,11 @@ const Cuadro = ({ valor, alHacerClick, ganadores }) => {
   const estiloGanador = ganadores === true ? 'ganadores' : ''
 
   return (
-    // Contenedor cuadrado con el estilo del cuadrado (cuadrado o cuadrado ganador)
-    <div className={`${estiloCuadro}`} onClick={() => alHacerClick()}>
-      {/* Contenedor del valor, contatenado el estilo del valo, con el del ganador  */}
-      <div className={`${estiloValor} ${estiloGanador}`}>{valor}</div>
-    </div>
+    // Boton cuadrado con el estilo del cuadrado (cuadrado o cuadrado ganador)
+    <button className={`${estiloCuadro}`} onClick={() => alHacerClick()}>
+      {/* Span del valor, contatenado el estilo del valor y del ganador  */}
+      <span className={`${estiloValor} ${estiloGanador}`}>{valor}</span>
+    </button>
   )
 }
 
