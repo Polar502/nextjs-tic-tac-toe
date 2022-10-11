@@ -13,11 +13,12 @@
  * ----
  */
 
-import React, { useState, useContext, useEffect } from 'react'
-import { AlertContext } from '../context/AlertProvider'
-import Tablero from '../components/Tablero'
-import Resetear from '../components/Resetear'
-import Puntajes from '../components/Puntajes'
+import React, { useState, useContext } from 'react'
+import { AlertContext } from '../context/alertProvider'
+import { AudioContext } from '../context/audioProvider'
+import Tablero from '../components/tablero'
+import Resetear from '../components/resetear'
+import Puntajes from '../components/puntajes'
 
 const MyTicTacToe = () => {
   const [cuadros, setCuadros] = useState(Array(9).fill(''))
@@ -26,8 +27,9 @@ const MyTicTacToe = () => {
   const [puntaje, setPuntaje] = useState({ puntajeX: 0, puntajeO: 0 })
   const [posiciones, setPosiciones] = useState([]) //Costante para almacenar la lista de posiciones ganadoras
   const [gameOver, setGameOver] = useState(false) //Constante para definir si el juego aun continua o ha finalizado
+
   const alert = useContext(AlertContext)
-  const [audio, SetAudio] = useState('')
+  const audio = useContext(AudioContext)
 
   //1. Funcion al hacer click en cualquier cuadro del tablero
   const pintaFigura = (indexItem) => {
@@ -37,7 +39,7 @@ const MyTicTacToe = () => {
     //Si el cuadro esta vacio y el juego aun no a terminado; permitir llenar
     if (gameOver === false) {
       if (cuadros[indexItem] === '') {
-        SetAudio('click')
+        audio.play('click')
 
         setCuadros(misCuadritos)
         if (turno === 'X') {
@@ -67,15 +69,15 @@ const MyTicTacToe = () => {
           `El cuadro ${indexItem + 1} ya tiene un valor, intente con otro.`
         )
 
-        SetAudio('error')
+        audio.play('error')
 
         setAnimacion(true)
         setTimeout(() => setAnimacion(false), 1000)
       }
     } else {
       alert.show('ATENCIÓN', 'El juego ya ha terminado, reinicia el juego.')
+      audio.play('error')
 
-      SetAudio('error')
       setAnimacion(true)
       setTimeout(() => setAnimacion(false), 1000)
     }
@@ -110,8 +112,7 @@ const MyTicTacToe = () => {
         setPosiciones(jugadasGanadoras[indiceJugada])
         // setTimeout(() => restablecerTablero(), 4000)
         alert.show('HAY UN GANADOR', `El ganador a sido → ${myTablero[a]}`)
-
-        SetAudio('winner')
+        audio.play('winner')
 
         return myTablero[a]
       }
@@ -124,7 +125,7 @@ const MyTicTacToe = () => {
     setAnimacion(false)
     setPosiciones([])
     setCuadros(Array(9).fill('')) // Sin ningún valor en los componentes ‘Cuadro’
-    SetAudio('')
+    // audio.play('')
   }
 
   return (
