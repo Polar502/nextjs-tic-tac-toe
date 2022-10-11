@@ -1,11 +1,13 @@
 /**
  * @const Tablero, Renderiza el componente tablero (‘Con 9 componentes Cuadro’) del juego Tic Tac Toe.
  *
- * @version       4.0
+ * @version       4.2
  *
  * @author        Mario Arita <marioarita502@gmail.com>
  *
  * History
+ * v4.2 - Se creo el audioContext para mejorar la interacion de los usuario con audios de acciones.
+ * v4.1 - Se agregaron y mejoraron animaciones, se agregaron svg icons y mejoras de diseño visual
  * v4.0 - Se agregaron alertas con useContext, se agrego el componente puntaje, se mejoraron la funciones de animacion, se mejoraron estilos del tablero y se agrego el estilo de fuente de manera local.
  * v3.0 – Se agrego la función calculaGanador, se agrego el button reset y se agregaron nuevas animaciones en el tailwind.config.js.
  * v2.0 – Se se mejoró el diseño y la distribuicion del tablero y se agrego la función pintaFigura.
@@ -28,6 +30,7 @@ const MyTicTacToe = () => {
   const [posiciones, setPosiciones] = useState([]) //Costante para almacenar la lista de posiciones ganadoras
   const [gameOver, setGameOver] = useState(false) //Constante para definir si el juego aun continua o ha finalizado
 
+  // context area
   const alert = useContext(AlertContext)
   const audio = useContext(AudioContext)
 
@@ -68,7 +71,6 @@ const MyTicTacToe = () => {
           'ATENCIÓN',
           `El cuadro ${indexItem + 1} ya tiene un valor, intente con otro.`
         )
-
         audio.play('error')
 
         setAnimacion(true)
