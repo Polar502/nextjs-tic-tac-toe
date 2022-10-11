@@ -1,0 +1,85 @@
+/* Font Family from Google Fonts (Fredoka) */
+@font-face {
+  font-family: 'Fredoka';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../../public/Fredoka.ttf);
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilo del grid del tablero con espaciado responsivo */
+.board {
+  @apply grid grid-cols-3 gap-2 md:gap-3 lg:gap-4 bg-cyan-900 rounded-md;
+}
+
+/* Estilo del cuadrado responsivo en las siguientes dimensiones: sm, md y xl */
+/* cuadro normal sin ninguna animacion */
+.square {
+  @apply flex items-center justify-center animate-none shadow-neutral-900 shadow-lg rounded-md bg-cyan-600 active:bg-cyan-400 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-20 w-20 sm:h-24 sm:w-24 xl:h-28 xl:w-28;
+}
+
+/* cuadro ganador con una animacion pulse */
+.squareWinner {
+  @apply flex items-center justify-center animate-pulse shadow-neutral-900 shadow-lg rounded-md bg-cyan-500 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-20 w-20 sm:h-24 sm:w-24 xl:h-28 xl:w-28;
+}
+
+/* estilo del valor X */
+.x {
+  @apply text-rose-600 font-fredoka text-7xl sm:text-8xl select-none;
+}
+
+/* estilo del valor O */
+.o {
+  @apply text-lime-600 font-fredoka text-7xl sm:text-8xl select-none;
+}
+
+/* estilo del valor concatenado entre X y Ganador (animacion spin)*/
+.x.ganadores {
+  @apply animate-spin;
+}
+
+/* estilo del valor concatenado entre O y Ganador (animacion flip modificado)*/
+.o.ganadores {
+  @apply animate-flip;
+}
+/* animacion shake modificado en Tailwind.config */
+.sacudirSi {
+  @apply animate-shake pointer-events-none;
+}
+
+/* ninguna animacion (es innecesaria) */
+.sacudirNo {
+  @apply animate-none;
+}
+
+.div-score {
+  @apply flex flex-row items-center justify-between gap-2 md:gap-3 lg:gap-4 mb-4 select-none;
+}
+
+.div-player {
+  @apply flex flex-row items-center justify-between text-base md:text-lg px-2 p-2 shadow-black shadow-2xl bg-neutral-900 rounded-md  w-full h-12 font-semibold text-white;
+}
+
+.activar {
+  @apply border-b-4 border-b-cyan-600;
+}
+
+.restart {
+  @apply text-xl md:text-2xl w-full select-none shadow-black shadow-2xl rounded-md bg-neutral-900 text-center font-semibold text-cyan-600 hover:text-white hover:cursor-pointer mt-4 p-2;
+}
+
+.errorTitle {
+  @apply font-semibold text-base md:text-lg text-center select-none text-rose-600 flex items-center;
+}
+
+.winTitle {
+  @apply font-semibold text-base md:text-lg text-center select-none text-amber-500 flex items-center;
+}
+
+.message {
+  @apply  flex items-center select-none text-sm md:text-base xl:text-lg h-full w-full text-white py-2 px-4;
+}
