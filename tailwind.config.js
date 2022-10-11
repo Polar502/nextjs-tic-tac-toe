@@ -11,8 +11,9 @@ module.exports = {
       },
       animation: {
         shake: 'shake 0.6s cubic-bezier(.36, .07, .19, .97) both',
-        bounce: 'bounce 0.6s infinite',
+        entry: 'entry 1s ease',
         flip: 'flip 2s ease infinite',
+        
       },
       keyframes: {
         shake: {
@@ -50,18 +51,17 @@ module.exports = {
             transform: 'translateX(0px)',
           },
         },
-        bounce: {
+        entry: {
           '0%': {
-            transform: 'translateY(-25%)',
-            timing: 'cubic-bezier(0.8, 0, 1, 1)',
+            opacity: '0',
+            transform: 'translateY(-30%)',
           },
-          '50%': {
-            transform: 'translateY(0px)',
-            timing: 'cubic-bezier(0, 0, 0.2, 1)',
+          '40%': {
+            opacity: '1',
+            transform: 'translateY(0%)',
           },
           '100%': {
-            transform: 'translateY(-25%)',
-            timing: 'cubic-bezier(0.8, 0, 1, 1)',
+            transform: 'translateY(0%)',
           },
         },
         flip: {

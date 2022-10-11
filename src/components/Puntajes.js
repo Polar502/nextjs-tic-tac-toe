@@ -1,5 +1,4 @@
 import React from 'react'
-
 /**
  * Puntajes es una función que toma dos props, puntaje y turno, y devuelve un div con dos divs adentro
  * de ella, cada una con los datos de jugador y su puntaje.
@@ -16,12 +15,12 @@ const Puntajes = ({ puntaje, turno }) => {
   return (
     <div className="div-score">
       <div className={`div-player ${activarX}`}>
-        <span className="">Player X</span>
-        <span className=""> {puntajeX} </span>
+        <span className="">Jugador X</span>
+        <span className="text-lg md:text-xl"> {puntajeX} </span>
       </div>
       <div className={`div-player ${activarO}`}>
-        <span className="">Player O</span>
-        <span className=""> {puntajeO} </span>
+        <span className="">Jugador O</span>
+        <span className="text-lg md:text-xl"> {puntajeO} </span>
       </div>
     </div>
   )

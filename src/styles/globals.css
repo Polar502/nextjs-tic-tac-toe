@@ -48,7 +48,7 @@
 }
 /* animacion shake modificado en Tailwind.config */
 .sacudirSi {
-  @apply animate-shake;
+  @apply animate-shake pointer-events-none;
 }
 
 /* ninguna animacion (es innecesaria) */
@@ -73,13 +73,13 @@
 }
 
 .errorTitle {
-  @apply font-bold text-center text-rose-600 flex items-center;
+  @apply font-semibold text-base md:text-lg text-center select-none text-rose-600 flex items-center;
 }
 
 .winTitle {
-  @apply font-bold text-center text-amber-500 flex items-center;
+  @apply font-semibold text-base md:text-lg text-center select-none text-amber-500 flex items-center;
 }
 
 .message {
-  @apply  flex items-center justify-center text-sm md:text-base h-full w-full text-white py-5 px-2;
+  @apply  flex items-center select-none text-sm md:text-base xl:text-lg h-full w-full text-white py-2 px-4;
 }
