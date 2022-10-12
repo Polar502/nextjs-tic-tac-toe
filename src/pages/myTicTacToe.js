@@ -6,6 +6,7 @@
  * @author        Mario Arita <marioarita502@gmail.com>
  *
  * History
+ * v4.3 - Se agregaron las alertas y sonidos para los empates
  * v4.2 - Se creo el audioContext para mejorar la interacion de los usuario con audios de acciones.
  * v4.1 - Se agregaron y mejoraron animaciones, se agregaron svg icons y mejoras de diseño visual
  * v4.0 - Se agregaron alertas con useContext, se agrego el componente puntaje, se mejoraron la funciones de animacion, se mejoraron estilos del tablero y se agrego el estilo de fuente de manera local.

@@ -5,7 +5,7 @@
   font-weight: 700;
   font-stretch: 100%;
   font-display: swap;
-  src: url(../../public/Fredoka.ttf);
+  src: url(../../public/fonts/Fredoka.ttf);
 }
 @tailwind base;
 @tailwind components;

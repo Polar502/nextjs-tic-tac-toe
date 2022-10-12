@@ -1,29 +1,39 @@
-# Tic Tac Toe
+# Tic Tac Toe (Our app in production)
 
 This is a Tic Tac Toe game made with Node.js and Next.js created by [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
-# View Tic Tac Toe Demo
+# Deployment of our first app (Tic Tac Toe)
 
-Link to see the demo → [View Demo](https://nextjs-tic-tac-toe-polar502.herokuapp.com/)
-(Our first APP - Part 4)
+## 1. Deploy on Heroku
 
-![alt text](https://raw.githubusercontent.com/Polar502/nextjs-tic-tac-toe/798c002589d020ebf79390b7dca1cddf51cac6cb/public/Captura%20de%20pantalla%20(62).png)
-
-
-## Getting Started
-
-First, run the development server:
+Deploy link on Heroku → [Heroku Deploy](https://nextjs-tic-tac-toe-polar502.herokuapp.com/)
 
 ```bash
-npm run dev
 # or
-yarn dev
+https://nextjs-tic-tac-toe-polar502.herokuapp.com/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![alt text](https://github.com/Polar502/nextjs-tic-tac-toe/blob/main/public/images/Heroku%20Demo.png?raw=true)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 2. Deploy on Vercel
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Deploy link on Vercel → [Vercel Deploy](https://nextjs-tic-tac-toe-8m49.vercel.app/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+# or
+https://nextjs-tic-tac-toe-8m49.vercel.app/
+```
+
+![alt text](https://github.com/Polar502/nextjs-tic-tac-toe/blob/main/public/images/Vercel%20Demo.png?raw=true)
+
+## 3. Deploy on Localhost:3000 (IPv4:192.168.1.13)
+
+Deploy using localhost → [http://localhost:3000/](http://localhost:3000/)
+
+```bash
+http://localhost:3000/
+# or
+http://192.168.1.13:3000/
+```
+
+![alt text](https://github.com/Polar502/nextjs-tic-tac-toe/blob/main/public/images/Local%20Demo.png?raw=true)
