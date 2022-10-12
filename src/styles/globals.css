@@ -80,6 +80,10 @@
   @apply font-semibold text-base md:text-lg text-center select-none text-amber-500 flex items-center;
 }
 
+.drawTitle {
+  @apply font-semibold text-base md:text-lg text-center select-none text-gray-400 flex items-center;
+}
+
 .message {
-  @apply  flex items-center select-none text-sm md:text-base xl:text-lg h-full w-full text-white py-2 px-4;
+  @apply  flex items-center select-none text-base md:text-lg xl:text-xl h-full w-full text-white py-2 px-4;
 }

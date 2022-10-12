@@ -4,9 +4,23 @@ const errorIcon =
 const winnerIcon =
   'M309 106c11.4-7 19-19.7 19-34c0-22.1-17.9-40-40-40s-40 17.9-40 40c0 14.4 7.6 27 19 34L209.7 220.6c-9.1 18.2-32.7 23.4-48.6 10.7L72 160c5-6.7 8-15 8-24c0-22.1-17.9-40-40-40S0 113.9 0 136s17.9 40 40 40c.2 0 .5 0 .7 0L86.4 427.4c5.5 30.4 32 52.6 63 52.6H426.6c30.9 0 57.4-22.1 63-52.6L535.3 176c.2 0 .5 0 .7 0c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40c0 9 3 17.3 8 24l-89.1 71.3c-15.9 12.7-39.5 7.5-48.6-10.7L309 106z'
 
+const drawIcon =
+  'M553.94,155.66a36.37,36.37,0,0,0-42,49.67l-94.07,43.84a29.12,29.12,0,0,1-40.64-19.91l-26-113.59a36.37,36.37,0,1,0-37.12-9L262,168.21l9,120,73.5-35.61,52.55,204-110.21-115-85.91,45.7-50-132a29,29,0,0,1-10-5.2l-81-64.81a36.38,36.38,0,1,0-29.1,14.56h.64L73,428.45a58.23,58.23,0,0,0,57.31,47.82l252.1-.1a57.9,57.9,0,0,0,26.58-6.44l-.24-.3a58.31,58.31,0,0,0,32.95-30.91L536.11,226.2l.62.15a36.38,36.38,0,1,0,17.21-70.69Z'
+
 const Alert = ({ mostrarAlerta, titulo, mensaje, setMostrarAlerta }) => {
-  const colorTitle = titulo === 'HAY UN GANADOR' ? 'winTitle' : 'errorTitle'
-  const icon = titulo === 'HAY UN GANADOR' ? winnerIcon : errorIcon
+  let colorTitle = null
+  let icon = null
+
+  if (titulo === 'HAY UN GANADOR') {
+    colorTitle = 'winTitle'
+    icon = winnerIcon
+  } else if (titulo === 'ATENCIÓN') {
+    colorTitle = 'errorTitle'
+    icon = errorIcon
+  } else if (titulo === 'NO HAY GANADOR') {
+    colorTitle = 'drawTitle'
+    icon = drawIcon
+  }
 
   if (mostrarAlerta === true) {
     return (

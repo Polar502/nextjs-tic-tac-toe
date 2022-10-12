@@ -116,6 +116,17 @@ const MyTicTacToe = () => {
         audio.play('winner')
 
         return myTablero[a]
+      } else if (
+        !myTablero.includes('') &&
+        gameOver === false &&
+        posiciones !== []
+      ) {
+        setGameOver(true)
+        alert.show(
+          'NO HAY GANADOR',
+          'Esta vez no hay un ganador, inicia una nueva partida.'
+        )
+        audio.play('draw')
       }
     }
   }

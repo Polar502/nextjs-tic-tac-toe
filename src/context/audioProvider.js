@@ -2,6 +2,7 @@ import React, { useState, createContext } from 'react'
 import click from '../../public/sounds/click.mp3'
 import error from '../../public/sounds/error.mp3'
 import winner from '../../public/sounds/winner.mp3'
+import draw from '../../public/sounds/draw.mp3'
 
 export const AudioContext = createContext()
 
@@ -15,6 +16,7 @@ const AudioProvider = ({ children }) => {
   const [audioWinner] = useState(
     typeof Audio !== 'undefined' && new Audio(winner)
   )
+  const [audioDraw] = useState(typeof Audio !== 'undefined' && new Audio(draw))
   const Playit = {
     play: (audio) => {
       if (audio === 'click') {
@@ -23,6 +25,8 @@ const AudioProvider = ({ children }) => {
         audioError.play()
       } else if (audio === 'winner') {
         audioWinner.play()
+      } else if (audio === 'draw') {
+        audioDraw.play()
       }
     },
   }
