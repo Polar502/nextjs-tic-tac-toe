@@ -65,6 +65,16 @@ const MyTicTacToe = () => {
             setPuntaje({ ...puntaje, puntajeX })
           }
         }
+
+        // encaso de que no haya ganador y los cuadros esten llenos sera un empate
+        if (nuevoGanador === '' && !misCuadritos.includes('')) {
+          setGameOver(true)
+          alert.show(
+            'NO HAY GANADOR',
+            'Esta vez no hay un ganador, inicia una nueva partida.'
+          )
+          audio.play('draw')
+        }
       } //De lo contario sacudir
       else {
         alert.show(
@@ -117,19 +127,9 @@ const MyTicTacToe = () => {
         audio.play('winner')
 
         return myTablero[a]
-      } else if (
-        !myTablero.includes('') &&
-        gameOver === false &&
-        posiciones !== []
-      ) {
-        setGameOver(true)
-        alert.show(
-          'NO HAY GANADOR',
-          'Esta vez no hay un ganador, inicia una nueva partida.'
-        )
-        audio.play('draw')
       }
     }
+    return ''
   }
 
   // // 3. Restablecer tablero con valor vacios y El gameOver en false
