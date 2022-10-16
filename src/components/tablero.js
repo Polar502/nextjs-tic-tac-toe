@@ -1,6 +1,6 @@
 import Cuadro from './cuadro'
 
-const Tablero = ({ cuadros, animacion, audio, posiciones, alHacerClick }) => {
+const Tablero = ({ cuadros, animacion, posiciones, alHacerClick }) => {
   //Si animacion es True entonces sacudir de lo contario no sacudir
   const animar = animacion === true ? 'sacudirSi' : 'sacudirNo'
 

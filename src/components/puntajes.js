@@ -16,11 +16,11 @@ const Puntajes = ({ puntaje, turno }) => {
     <div className="div-score">
       <div className={`div-player ${activarX}`}>
         <span className="">Jugador X</span>
-        <span className="text-lg md:text-xl"> {puntajeX} </span>
+        <span className="text-lg"> {puntajeX} </span>
       </div>
       <div className={`div-player ${activarO}`}>
         <span className="">Jugador O</span>
-        <span className="text-lg md:text-xl"> {puntajeO} </span>
+        <span className="text-lg"> {puntajeO} </span>
       </div>
     </div>
   )

@@ -9,22 +9,20 @@ This is a Tic Tac Toe game made with Node.js and Next.js created by [`create-nex
 Deploy link on Heroku → [Heroku Deploy](https://nextjs-tic-tac-toe-polar502.herokuapp.com/)
 
 ```bash
-# or
 https://nextjs-tic-tac-toe-polar502.herokuapp.com/
 ```
 
-![alt text](https://github.com/Polar502/nextjs-tic-tac-toe/blob/main/public/images/Heroku%20Demo.png?raw=true)
+![alt text](https://github.com/Polar502/nextjs-tic-tac-toe/blob/main/public/heroku%20demo.png?raw=true)
 
 ## 2. Deploy on Vercel
 
-Deploy link on Vercel → [Vercel Deploy](https://nextjs-tic-tac-toe-8m49.vercel.app/)
+Deploy link on Vercel → [Vercel Deploy](https://nextjs-tic-tac-toe-polar502.vercel.app/)
 
 ```bash
-# or
-https://nextjs-tic-tac-toe-8m49.vercel.app/
+https://nextjs-tic-tac-toe-polar502.vercel.app/
 ```
 
-![alt text](https://github.com/Polar502/nextjs-tic-tac-toe/blob/main/public/images/Vercel%20Demo.png?raw=true)
+![alt text](https://github.com/Polar502/nextjs-tic-tac-toe/blob/main/public/vercerl%20demo.png?raw=true)
 
 ## 3. Deploy on Localhost:3000 (IPv4:192.168.1.13)
 
@@ -36,4 +34,4 @@ http://localhost:3000/
 http://192.168.1.13:3000/
 ```
 
-![alt text](https://github.com/Polar502/nextjs-tic-tac-toe/blob/main/public/images/Local%20Demo.png?raw=true)
+![alt text](https://github.com/Polar502/nextjs-tic-tac-toe/blob/main/public/localhost.png?raw=true)

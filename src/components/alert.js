@@ -26,12 +26,12 @@ const Alert = ({ mostrarAlerta, titulo, mensaje, setMostrarAlerta }) => {
     return (
       <>
         <div
-          className="fixed justify-center items-center animate-entry top-1 right-0 left-0 bg-neutral-900 shadow-lg shadow-neutral-900 mx-auto h-auto w-[256px] sm:w-[312px] lg:w-[320px] xl:w-[368px] pointer-events-auto rounded-md mb-3"
+          className="fixed justify-center items-center animate-entry top-1 right-0 left-0 bg-[#E4F1FA] dark:bg-neutral-900  mx-auto h-auto w-[256px] sm:w-[312px] lg:w-[320px] xl:w-[368px] pointer-events-auto rounded-md mb-3 shadow-gray-400 drop-shadow-xl dark:shadow-neutral-900 dark:shadow-xl"
           role="alert"
           aria-live="assertive"
           aria-atomic="true"
         >
-          <div className=" flex justify-between items-center py-1 px-3 bg-neutral-900 border-b-[3px] border-cyan-600 rounded-t-lg">
+          <div className=" flex justify-between items-center py-1 px-3 border-b-[3px] border-cyan-400 dark:border-cyan-600 rounded-t-lg">
             <p className={`${colorTitle}`}>
               <span className="flex justify-between items-center ">
                 <svg
@@ -56,7 +56,7 @@ const Alert = ({ mostrarAlerta, titulo, mensaje, setMostrarAlerta }) => {
             <div className="flex items-center">
               <button
                 type="button"
-                className="box-content w-5 h-5 ml-2 text-white hover:bg-rose-600 border-none"
+                className="box-content w-5 h-5 ml-2 text-neutral-900 dark:text-slate-100 hover:bg-rose-600 border-none"
                 data-mdb-dismiss="toast"
                 aria-label="Close"
                 onClick={() => setMostrarAlerta(false)}

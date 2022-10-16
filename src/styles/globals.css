@@ -5,7 +5,7 @@
   font-weight: 700;
   font-stretch: 100%;
   font-display: swap;
-  src: url(../../public/fonts/Fredoka.ttf);
+  src: url(/fonts/Fredoka.ttf);
 }
 @tailwind base;
 @tailwind components;
@@ -13,28 +13,28 @@
 
 /* Estilo del grid del tablero con espaciado responsivo */
 .board {
-  @apply grid grid-cols-3 gap-2 md:gap-3 lg:gap-4 bg-cyan-900 rounded-md;
+  @apply grid grid-cols-3 gap-2 md:gap-3 lg:gap-4 bg-[#CDE4F3] dark:bg-cyan-900 rounded-md shadow-gray-500 drop-shadow-xl dark:shadow-neutral-900 dark:shadow-xl;
 }
 
 /* Estilo del cuadrado responsivo en las siguientes dimensiones: sm, md y xl */
 /* cuadro normal sin ninguna animacion */
 .square {
-  @apply flex items-center justify-center animate-none shadow-neutral-900 shadow-lg rounded-md bg-cyan-600 active:bg-cyan-400 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-20 w-20 sm:h-24 sm:w-24 xl:h-28 xl:w-28;
+  @apply flex items-center justify-center animate-none shadow-gray-400 dark:shadow-neutral-900 dark:shadow-lg shadow-inner rounded-md bg-cyan-400 dark:bg-cyan-600 active:bg-[#CEE4F3] dark:active:bg-cyan-400 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-20 w-20 sm:h-24 sm:w-24 xl:h-28 xl:w-28;
 }
 
 /* cuadro ganador con una animacion pulse */
 .squareWinner {
-  @apply flex items-center justify-center animate-pulse shadow-neutral-900 shadow-lg rounded-md bg-cyan-500 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-20 w-20 sm:h-24 sm:w-24 xl:h-28 xl:w-28;
+  @apply flex items-center justify-center shadow-gray-400 dark:shadow-neutral-900 dark:shadow-lg shadow-inner rounded-md bg-cyan-300 dark:bg-cyan-500 hover:cursor-pointer hover:bg-opacity-75 duration-300 h-20 w-20 sm:h-24 sm:w-24 xl:h-28 xl:w-28;
 }
 
 /* estilo del valor X */
 .x {
-  @apply text-rose-600 font-fredoka text-7xl sm:text-8xl select-none;
+  @apply text-rose-500 dark:text-rose-600 font-fredoka text-7xl sm:text-8xl select-none;
 }
 
 /* estilo del valor O */
 .o {
-  @apply text-lime-600 font-fredoka text-7xl sm:text-8xl select-none;
+  @apply text-lime-500 dark:text-lime-600 font-fredoka text-7xl sm:text-8xl select-none;
 }
 
 /* estilo del valor concatenado entre X y Ganador (animacion spin)*/
@@ -61,15 +61,15 @@
 }
 
 .div-player {
-  @apply flex flex-row items-center justify-between text-base md:text-lg px-2 p-2 shadow-black shadow-2xl bg-neutral-900 rounded-md  w-full h-12 font-semibold text-white;
+  @apply flex flex-row items-center justify-between text-base md:text-lg px-2 p-2 shadow-gray-500 drop-shadow-xl dark:shadow-neutral-900 dark:shadow-xl bg-[#E3F1FA] dark:bg-neutral-900 rounded-md  w-full h-12 font-bold text-neutral-700 dark:text-slate-100;
 }
 
 .activar {
-  @apply border-b-4 border-b-cyan-600;
+  @apply border-b-4 border-b-cyan-400 dark:border-b-cyan-600;
 }
 
 .restart {
-  @apply text-xl md:text-2xl w-full select-none shadow-black shadow-2xl rounded-md bg-neutral-900 text-center font-semibold text-cyan-600 hover:text-white hover:cursor-pointer mt-4 p-2;
+  @apply text-xl md:text-2xl w-full select-none shadow-gray-500 drop-shadow-xl dark:shadow-neutral-900 dark:shadow-2xl bg-[#E3F1FA] dark:bg-neutral-900 rounded-md text-center font-semibold hover:text-cyan-500 text-neutral-700 dark:text-cyan-600 dark:hover:text-white hover:cursor-pointer mt-4 p-2;
 }
 
 .errorTitle {
@@ -85,5 +85,5 @@
 }
 
 .message {
-  @apply  flex items-center select-none text-base md:text-lg xl:text-xl h-full w-full text-white py-2 px-4;
+  @apply flex items-center select-none font-semibold text-base md:text-lg xl:text-xl h-full w-full text-neutral-900 dark:text-slate-100 py-2 px-4;
 }

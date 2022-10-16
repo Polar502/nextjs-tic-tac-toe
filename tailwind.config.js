@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
@@ -13,7 +14,6 @@ module.exports = {
         shake: 'shake 0.6s cubic-bezier(.36, .07, .19, .97) both',
         entry: 'entry 1s ease',
         flip: 'flip 2s ease infinite',
-        
       },
       keyframes: {
         shake: {
@@ -74,7 +74,8 @@ module.exports = {
             transitionTimingFunction: 'ease-out',
           },
           '50%': {
-            transform: 'perspective(10em) translateZ(150px) rotateY(190deg) scale(1)',
+            transform:
+              'perspective(10em) translateZ(150px) rotateY(190deg) scale(1)',
             transitionTimingFunction: 'ease-in',
           },
           '80%': {

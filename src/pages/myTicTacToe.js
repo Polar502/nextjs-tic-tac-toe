@@ -27,19 +27,19 @@ const MyTicTacToe = () => {
   const [turno, setTurno] = useState('X')
   const [animacion, setAnimacion] = useState(false)
   const [puntaje, setPuntaje] = useState({ puntajeX: 0, puntajeO: 0 })
-  const [posiciones, setPosiciones] = useState([]) //Costante para almacenar la lista de posiciones ganadoras
-  const [gameOver, setGameOver] = useState(false) //Constante para definir si el juego aun continua o ha finalizado
+  const [posiciones, setPosiciones] = useState([]) // Costante para almacenar la lista de posiciones ganadoras
+  const [gameOver, setGameOver] = useState(false) // Constante para definir si el juego aun continua o ha finalizado
 
   // context area
   const alert = useContext(AlertContext)
   const audio = useContext(AudioContext)
 
-  //1. Funcion al hacer click en cualquier cuadro del tablero
+  // 1. Funcion al hacer click en cualquier cuadro del tablero
   const pintaFigura = (indexItem) => {
     const misCuadritos = cuadros.slice()
     misCuadritos.splice(indexItem, 1, turno)
 
-    //Si el cuadro esta vacio y el juego aun no a terminado; permitir llenar
+    // Si el cuadro esta vacio y el juego aun no a terminado; permitir llenar
     if (gameOver === false) {
       if (cuadros[indexItem] === '') {
         audio.play('click')
@@ -75,8 +75,7 @@ const MyTicTacToe = () => {
           )
           audio.play('draw')
         }
-      } //De lo contario sacudir
-      else {
+      } else {
         alert.show(
           'ATENCIÓN',
           `El cuadro ${indexItem + 1} ya tiene un valor, intente con otro.`
@@ -95,7 +94,7 @@ const MyTicTacToe = () => {
     }
   }
 
-  //2. Calcular si dentro del tablero hay un ganador
+  // 2. Calcular si dentro del tablero hay un ganador
   const calculaGanador = (myTablero) => {
     const jugadasGanadoras = [
       [0, 1, 2],
@@ -119,7 +118,7 @@ const MyTicTacToe = () => {
         myTablero[a] === myTablero[b] &&
         myTablero[a] === myTablero[c]
       ) {
-        //El juego a terminado ('no mas entradas')
+        // El juego a terminado ('no mas entradas')
         setGameOver(true)
         setPosiciones(jugadasGanadoras[indiceJugada])
         // setTimeout(() => restablecerTablero(), 4000)
@@ -138,17 +137,15 @@ const MyTicTacToe = () => {
     setAnimacion(false)
     setPosiciones([])
     setCuadros(Array(9).fill('')) // Sin ningún valor en los componentes ‘Cuadro’
-    // audio.play('')
   }
 
   return (
-    <div className="flex flex-col bg-neutral-800 items-center justify-center min-h-screen">
-      <div className="grow-1">
+    <div className="flex flex-col items-center justify-center h-[90vh]">
+      <div className="">
         <Puntajes puntaje={puntaje} turno={turno} />
         <Tablero
           cuadros={cuadros}
           animacion={animacion}
-          audio={audio}
           alHacerClick={pintaFigura}
           posiciones={posiciones}
         />
